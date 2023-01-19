@@ -13,7 +13,7 @@
 
 ## Slices
 
-- [] Create component files
+- [x] Create component files
 - [] Initialize fetch(services), hooks(usePokemon)
 - [] Use Main to display Pokemon names on page
 - [] Use Select to display Pokemon types on page
