@@ -7,6 +7,13 @@ export default function Main() {
   return (
     <div>
       <h1>Pokemon Compendium!</h1>
+      {/* controls */}
+      {/* cards */}
+      <section>
+        {pokemon.map((poke) => (
+          <p key={poke._id}>{poke.pokemon}</p>
+        ))}
+      </section>
     </div>
   );
 }
