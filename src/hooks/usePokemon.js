@@ -1,8 +1,9 @@
 import { useEffect, useState } from 'react';
-import { fetchInitPokemon } from '../services/fetchPokemon.js';
+import { fetchInitPokemon, fetchTypes } from '../services/fetchPokemon.js';
 
 export function usePokemon() {
   const [pokemon, setPokemon] = useState([]);
+  const [types, setTypes] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -11,5 +12,14 @@ export function usePokemon() {
     };
     fetchData();
   }, []);
-  return pokemon;
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const data = await fetchTypes();
+      setTypes(data);
+    };
+    fetchData();
+  }, []);
+
+  return { pokemon, types };
 }

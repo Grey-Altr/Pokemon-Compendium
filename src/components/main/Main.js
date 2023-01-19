@@ -2,7 +2,7 @@ import React from 'react';
 import { usePokemon } from '../../hooks/usePokemon.js';
 
 export default function Main() {
-  const pokemon = usePokemon();
+  const { pokemon, types } = usePokemon();
 
   return (
     <div>
@@ -11,7 +11,9 @@ export default function Main() {
       {/* cards */}
       <section>
         {pokemon.map((poke) => (
-          <p key={poke._id}>{poke.pokemon}</p>
+          <p key={poke._id}>
+            {poke.pokemon} {poke.type_1} {poke.type_2}
+          </p>
         ))}
       </section>
     </div>
