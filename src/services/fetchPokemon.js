@@ -9,3 +9,9 @@ export async function fetchTypes() {
   const data = await resp.json();
   return data;
 }
+
+export async function fetchPokemon(type) {
+  const resp = await fetch(`https://alchemy-pokedex.herokuapp.com/api/pokedex/?type=${type}`);
+  const data = await resp.json();
+  return data.results;
+}

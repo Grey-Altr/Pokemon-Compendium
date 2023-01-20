@@ -3,13 +3,13 @@ import { usePokemon } from '../../hooks/usePokemon.js';
 import Select from './controls/select/Select.js';
 
 export default function Main() {
-  const { pokemon, types } = usePokemon();
+  const { pokemon, types, handleTypeChange } = usePokemon();
 
   return (
     <>
       <section className="controls">
         <h1>Pokemon Compendium!</h1>
-        <Select types={types} />
+        <Select types={types} handleTypeChange={handleTypeChange} />
       </section>
       <section className="cards">
         {pokemon.map((poke) => (
