@@ -1,0 +1,24 @@
+main {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell,
+    Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  margin: 0;
+
+  --color-light: #f4f1de;
+  --color-orange: #e07a5f;
+  --color-blue: #3d405b;
+  --color-green: #81b29a;
+  --color-yellow: #f2cc8f;
+  --colorDark: #272727;
+  --header-height: 40px;
+  background-color: var(--color-blue);
+  color: var(--color1);
+  font-family: Roboto, sans-serif;
+}
+
+.poke-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
