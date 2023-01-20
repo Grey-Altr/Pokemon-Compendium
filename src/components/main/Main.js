@@ -4,7 +4,7 @@ import PokeList from '../Pokemon/PokeList.js';
 import Select from './controls/select/Select.js';
 
 export default function Main() {
-  const { pokemon, types, handleTypeChange } = usePokemon();
+  const { pokemon, types, handleTypeChange, loading } = usePokemon();
 
   return (
     <>
@@ -12,7 +12,7 @@ export default function Main() {
         <h1>Pokemon Compendium!</h1>
         <Select types={types} handleTypeChange={handleTypeChange} />
       </section>
-      <PokeList pokemon={pokemon} />
+      <PokeList pokemon={pokemon} loading={loading} />
     </>
   );
 }

@@ -4,11 +4,14 @@ import { fetchInitPokemon, fetchPokemon, fetchTypes } from '../services/fetchPok
 export function usePokemon() {
   const [pokemon, setPokemon] = useState([]);
   const [types, setTypes] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
+    setLoading(true);
     const fetchData = async () => {
       const data = await fetchInitPokemon();
       setPokemon(data);
+      setLoading(false);
     };
     fetchData();
   }, []);
@@ -22,9 +25,11 @@ export function usePokemon() {
   }, []);
 
   const handleTypeChange = async (type) => {
+    setLoading(true);
     const data = await fetchPokemon(type);
     setPokemon(data);
+    setLoading(false);
   };
 
-  return { pokemon, types, handleTypeChange };
+  return { pokemon, types, handleTypeChange, loading };
 }
