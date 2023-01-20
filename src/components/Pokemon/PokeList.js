@@ -6,8 +6,12 @@ export default function PokeList({ pokemon }) {
       {pokemon.map((poke) => (
         <div key={poke._id}>
           <img key={poke.id} src={poke.url_image} />
-          <p key={poke._id}>
-            {poke.pokemon} {poke.type_1} {poke.type_2}
+          <h2>{poke.pokemon}</h2>
+          <p>
+            Type: {poke.type_1}, {poke.type_2}
+          </p>
+          <p>
+            Ability: {poke.ability_1}, {poke.ability_2}
           </p>
         </div>
       ))}
