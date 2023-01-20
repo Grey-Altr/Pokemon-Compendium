@@ -12,7 +12,11 @@ export default function Main() {
         <h1>Pokemon Compendium!</h1>
         <Select types={types} handleTypeChange={handleTypeChange} />
       </section>
-      <PokeList pokemon={pokemon} loading={loading} />
+      <section>
+        {pokemon.map((poke) => (
+          <PokeList key={poke.id} poke={poke} loading={loading} />
+        ))}
+      </section>
     </>
   );
 }
